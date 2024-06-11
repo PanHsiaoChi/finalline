@@ -8,8 +8,9 @@ from linebot.models import MessageEvent, ConfirmTemplate, ImageSendMessage, Text
 import random
 
 
-line_bot_api = LineBotApi('L62PdImaXvL5xcWCFPjFM3arthjlfsS0Q3YrNj7obrnaNIHxmX0gHNqOyJ7JM0md15R63JcxNm1fg19LpXVLD435E//hOB5Gt9zXSZhxR4IjPLzmySAKaeDcUdbvm0d7G+U1Ib6Trii7v3+7eTmr6QdB04t89/1O/w1cDnyilFU=')
-handler = WebhookHandler('f767f10c974f9ad05b116baf3dbe0eee')
+import os
+line_bot_api = LineBotApi(os.environ.get('CHANNEL_ACCESS_TOKEN'))
+handler = WebhookHandler(os.environ.get('CHANNEL_SECRET'))
 
 
 RoomColor = ['入住樓層：1F蔚藍記憶','入住樓層：2F夕陽的餘暉','入住樓層：3F舊時記憶堂前燕','入住樓層：4F粉色夢幻時光'] 
